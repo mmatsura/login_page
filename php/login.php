@@ -25,7 +25,7 @@ function isActive($formName, $activeForm){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
@@ -45,7 +45,11 @@ function isActive($formName, $activeForm){
         <div class="form-box login" id="<?php echo isActive('login', $active_form); ?>">
             <h2>Login</h2>
             <?php echo showError($errors['login_error']); ?>
+<<<<<<< Updated upstream
             <form action="login_register.php" method="post">
+=======
+            <form action="php/login_register.php" method="post">
+>>>>>>> Stashed changes
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
                     <input type="email" name="email" required>
@@ -70,7 +74,11 @@ function isActive($formName, $activeForm){
         <div class="form-box register" id="<?php echo isActive('register', $active_form); ?>">
             <h2>Registration</h2>
             <?php echo showError($errors['register_error']); ?>
+<<<<<<< Updated upstream
             <form action="login_register.php"  method="post">
+=======
+            <form action="php/login_register.php" method="post">
+>>>>>>> Stashed changes
                 <div class="input-box" name ="name">
                     <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
                     <input type="text" name="name" required>
@@ -97,7 +105,7 @@ function isActive($formName, $activeForm){
         </div>
     </div>
 
-    <script src="login.js"></script>
+    <script src="js/login.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
