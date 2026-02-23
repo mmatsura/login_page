@@ -1,8 +1,10 @@
 <?php
 session_start();
+// Оскільки config.php в тій же папці php/, пишемо просто назву
 require_once 'config.php';
 
-if(isset($_POST['btn'])) {
+// РЕЄСТРАЦІЯ
+if (isset($_POST['btn'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -12,14 +14,15 @@ if(isset($_POST['btn'])) {
     if ($check_email->num_rows > 0){
         $_SESSION['register_error'] = "Email already exists!";
         $_SESSION['active_form'] = 'register';
-    }
-    else{
+    } else {
         $conn->query("INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')");
+        $_SESSION['active_form'] = 'login';
     }
     header("Location: ../login.php");
     exit();
 }
 
+// ЛОГІН
 if (isset($_POST['btnLogin'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -28,17 +31,14 @@ if (isset($_POST['btnLogin'])) {
 
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
-        
         if (password_verify($password, $user['password'])) {
             $_SESSION['name'] = $user['name'];
             $_SESSION['email'] = $user['email'];
-            // Тут також додаємо ../ щоб потрапити на головну панель
-            header("Location: ../dashboard.php");
+            header("Location: ../home.php"); // Перевірте, чи є цей файл у корені
             exit();
         }
     }
 
-    // Якщо щось не співпало
     $_SESSION['login_error'] = "Invalid email or password!";
     $_SESSION['active_form'] = 'login';
     header("Location: ../login.php");

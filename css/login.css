@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('background1.jpg') no-repeat;
+    background: url("../img/background1.jpg") no-repeat;
     background-size: cover;
     background-position: center;
 
@@ -97,7 +97,7 @@ header{
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    transform: scale(0);
+    transform: scale(1);
     transition: height 0.5s ease;
 }
 
@@ -237,10 +237,11 @@ header{
 
 .error-message{
     padding: 12px;
-    color: #ff0000;
-    background-color: #ffe5e5;
+    color: #000000;
+    backdrop-filter: blur(20px);
     border-radius: 6px;
     font-size: 16px;
     margin-bottom: 15px;
     text-align: center;
+    margin-top: 10px;
 }
