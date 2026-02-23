@@ -16,7 +16,6 @@ if(isset($_POST['btn'])) {
     else{
         $conn->query("INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')");
     }
-
     header("Location: ../login.php");
     exit();
 }
@@ -33,10 +32,13 @@ if (isset($_POST['btnLogin'])) {
         if (password_verify($password, $user['password'])) {
             $_SESSION['name'] = $user['name'];
             $_SESSION['email'] = $user['email'];
+            // Тут також додаємо ../ щоб потрапити на головну панель
             header("Location: ../dashboard.php");
             exit();
         }
     }
+
+    // Якщо щось не співпало
     $_SESSION['login_error'] = "Invalid email or password!";
     $_SESSION['active_form'] = 'login';
     header("Location: ../login.php");

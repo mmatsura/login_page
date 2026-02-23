@@ -4,7 +4,7 @@ $errors = [
     'login_error' => $_SESSION['login_error'] ?? null,
     'register_error' => $_SESSION['register_error'] ?? null
 ];
-$active_form = $_SESSION['active_form'] ?? 'login'
+$active_form = $_SESSION['active_form'] ?? 'login'; // Додано крапку з комою
 session_unset();
 
 function showError($error) {
