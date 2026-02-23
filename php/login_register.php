@@ -17,11 +17,7 @@ if(isset($_POST['btn'])) {
         $conn->query("INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')");
     }
 
-<<<<<<< Updated upstream
-    header("Location: login.php");
-=======
     header("Location: ../login.php");
->>>>>>> Stashed changes
     exit();
 }
 
@@ -37,23 +33,13 @@ if (isset($_POST['btnLogin'])) {
         if (password_verify($password, $user['password'])) {
             $_SESSION['name'] = $user['name'];
             $_SESSION['email'] = $user['email'];
-<<<<<<< Updated upstream
-            header("Location: dashboard.php");
-=======
             header("Location: ../dashboard.php");
->>>>>>> Stashed changes
             exit();
         }
     }
-
-    // Якщо щось не співпало
     $_SESSION['login_error'] = "Invalid email or password!";
     $_SESSION['active_form'] = 'login';
-<<<<<<< Updated upstream
-    header("Location: login.php");
-=======
     header("Location: ../login.php");
->>>>>>> Stashed changes
     exit();
 }
 ?>
