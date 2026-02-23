@@ -1,0 +1,13 @@
+<?php
+// Database configuration
+$host = 'localhost'; // Database host
+$user = 'root'; // Database username
+$password = ''; // Database password
+$database = 'users_db'; // Database name
+
+$conn = new mysqli($host, $user, $password, $database);
+
+if($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>

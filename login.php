@@ -25,6 +25,10 @@
         <div class="form-box login">
             <h2>Login</h2>
             <form action="#">
+        <div class="form-box login" id="<?php echo isActive('login', $active_form); ?>">
+            <h2>Увійти</h2>
+            <?php echo showError($errors['login_error']); ?>
+            <form action="php/login_register.php" method="post">
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
                     <input type="email" required>
