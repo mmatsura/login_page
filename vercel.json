@@ -1,12 +1,16 @@
 {
-  "functions": {
-    "api/*.php": {
-      "runtime": "vercel-php@0.7.0"
+  "version": 2,
+  "name": "login-page",
+  "builds": [
+    {
+      "src": "index.php",
+      "use": "vercel-php@0.7.0"
     },
-    "*.php": {
-      "runtime": "vercel-php@0.7.0"
+    {
+      "src": "css/**",
+      "use": "@vercel/static"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/(.*)",
