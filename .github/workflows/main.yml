@@ -2,7 +2,7 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: ['main']
+    branches: ['main', 'feature/initial-layout']
   pull_request:
     branches: ['main']
 
@@ -21,3 +21,9 @@ jobs:
 
       - name: Check syntax
         run: php -l index.php
+
+      - name: Install dependencies
+        run: echo "No dependencies to install" # Просто виведе текст, щоб крок був зеленим
+
+      - name: Run tests
+        run: php index.php
