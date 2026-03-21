@@ -53,3 +53,16 @@ project-folder/
 - Database storage
 
 Author: Maria Matsura
+
+![GitHub Actions Status](https://img.shields.io/github/actions/workflow/status/MariiaMatsura/login_page_gitHub/main.yml?branch=main&label=CI%20Pipeline)
+![Vercel Deployment](https://vercelbadge.vercel.app/api/MariiaMatsura/login_page_gitHub)
+
+## Використані технології
+
+- **Мова:** PHP 8.2
+- **CI/CD:** GitHub Actions
+- **Хостинг:** Vercel (Serverless)
+
+## 🔗 Посилання на сайт
+
+👉 [**Відкрити проєкт на Vercel**](https://login-page-bew9ey8vd-mmatsuras-projects.vercel.app/)
