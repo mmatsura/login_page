@@ -40,7 +40,9 @@ function isActive($formName, $activeForm){
                 <button class="btnLogin-popup">Login</button>
         </nav>
     </header>
-
+    <div id="app-status" style="text-align: center; color: white; padding: 10px; background: rgba(0,0,0,0.5);">
+    </div>
+    
     <div class="wrapper">
         <div class="form-box login" id="<?php echo isActive('login', $active_form); ?>">
             <h2>Login</h2>

@@ -1,3 +1,14 @@
+const appStatus = import.meta.env.VITE_APP_STATUS || 'Local Mode';
+
+console.log("Current Status:", appStatus);
+
+document.addEventListener("DOMContentLoaded", () => {
+    const statusBox = document.querySelector("#app-status");
+    if (statusBox) {
+        statusBox.textContent = `Application Mode: ${appStatus}`;
+    }
+});
+
 const wrapper = document.querySelector(".wrapper");
 const loginLink = document.querySelector(".login-link");
 const registerLink = document.querySelector(".register-link");
