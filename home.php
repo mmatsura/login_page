@@ -1,7 +1,8 @@
 <?php
 session_start();
+// Якщо пошти в сесії немає — виганяємо на головну (index.php)
 if(!isset($_SESSION['email'])) {
-    header("Location: home.php");
+    header("Location: index.php"); 
     exit();
 }
 ?>
@@ -15,6 +16,7 @@ if(!isset($_SESSION['email'])) {
     <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-    
+    <h1>Вітаємо, <?php echo $_SESSION['email']; ?>!</h1>
+    <a href="php/logout.php">Вийти</a>
 </body>
 </html>
